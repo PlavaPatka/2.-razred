@@ -1,0 +1,93 @@
+programiranje lv1.
+
+natjecanje
+
+/*
+LV1 – Zadatak: NATJECANJE
+Učenik/učenici: ADRIANO JURAS
+Funkcija prima: int zadatak1, int zadatak2, int zadatak3
+Funkcija vraća: true/false
+Moj test: 
+ulaz: 60 50 100
+očekivani rezultat: true
+što test provjerava: zadatak1+zadatak2+zadatak3 >=200 && zadatak1 >= 40 && zadatak2 >= 40 && zadatak3 >= 40
+AI: nisam koristio
+
+
+
+#include <iostream>
+using namespace std;
+
+bool prolaz(int zadatak1, int zadatak2, int zadatak3)
+{
+    if(zadatak1+zadatak2+zadatak3 >=200 && zadatak1 >= 40 && zadatak2 >= 40 && zadatak3 >= 40)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+int main()
+{ 
+    int a, b, c;
+    cin >> a >>b >> c;
+    cout << prolaz(a, b, c);
+    return 0;
+}
+
+sigurnosna zona
+
+/*
+LV1 – Zadatak: SIGURNOSNA ZONA
+Učenik/učenici: ADRIANO JURAS
+Funkcija prima: int xmin, int ymin, int xmax, int ymax, int xtemp, int ytemp
+Funkcija vraća: 0/1/25
+Moj test:
+ulaz: 2,3,8,7,2,7
+očekivani rezultat: na granici
+što test provjerava: xtemp==xmin || xtemp==xmax || ytemp==ymin || ytemp==ymax
+AI: nisam koristio
+
+
+
+#include <iostream>
+using namespace std;
+
+int sigurno(int xmin, int ymin, int xmax, int ymax, int xtemp, int ytemp)
+{
+       if(xtemp==xmin || xtemp==xmax || ytemp==ymin || ytemp==ymax)
+   {
+       return 1;
+   }
+   if (xtemp>=xmin && xtemp<=xmax && ytemp>=ymin && ytemp<=ymax)
+   {
+       return 0;
+   }
+   else
+   {
+       return 25;
+   }
+}
+
+
+int main()
+{ 
+    int xmin, ymin, xmax, ymax, xtemp, ytemp;
+    cin >> xmin >> ymin >> xmax >> ymax >> xtemp >> ytemp;
+    if(sigurno(xmin, ymin, xmax, ymax, xtemp, ytemp) == 0)
+    {
+        cout << "na sigurnome";
+    }
+    else if(sigurno(xmin, ymin, xmax, ymax, xtemp, ytemp) == 1)
+    {
+        cout << "na rubu sigurnoga";
+    }
+    else
+    {
+        cout << "nije na sigurnome";
+    }
+    return 0;
+}

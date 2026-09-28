@@ -3,6 +3,11 @@ SENZORI
 
 
 
+Potpis funkcije: int senzor
+Koja su tri ulazna parametra? a, b, c
+Povratno : prosječna ili većinska vrijednost
+Što treba raditi main(), a što funkcija? main upisuje i ispisuje zadano, funkcija računa zadano
+
 #include <iostream>
 using namespace std;
 
@@ -34,6 +39,12 @@ return 0;
 
 PRAVO NA POPUST
 
+
+
+Potpis funkcije: bool popusti    
+Koja su tri ulazna parametra? bodovi, racun, koristenje
+Zašto je povratni tip bool, a ne tri odvojene povratne vrijednosti? jer određuje postoji li mogućnost popusta
+Što treba raditi main(), a što funkcija?  main upisuje vrijednosti i ispisuje mogućnost popusta a funkcija računa jeli popust po uvjetima mogući
 
 
 #include <iostream>

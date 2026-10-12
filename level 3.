@@ -1,0 +1,92 @@
+
+
+
+AI filter 
+
+
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool prihvatljivo(string poruka)
+{
+    if (poruka[0] == ' ')
+    {
+        return false;
+    }
+    if (poruka.length() > 40)
+    {
+        return false;
+    }
+    int i = 0;
+    while(1)
+    {
+        if (poruka[i] == '#')
+        {
+            return false;
+        }
+        if (poruka[i] == '\0')
+        {
+            return true;
+        }
+        i++;
+    }
+}
+
+int main()
+{
+    string poruka;
+    getline(cin, poruka);
+    cout << prihvatljivo(poruka);
+    return 0;
+}
+
+
+
+
+
+PAMETNI SENZOR
+
+
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool temperatura(int n, char mj)
+{
+	if (mj=='K')
+	{
+		return false;
+	}
+	if (mj == 'C')
+	{
+		if (n > -40 && n < 85)
+		{
+			return true;
+		}
+	}
+	if (mj == 'F')
+	{
+		if (n > -40 && n < 185)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+int main()
+{
+	int temp;
+	char tempmj;
+	cin >> temp >> tempmj;
+	cout << temperatura(temp, tempmj);
+	return 0;
+}
+

@@ -90,3 +90,59 @@ int main()
 	return 0;
 }
 
+
+
+
+
+
+DNA UZORAK
+
+
+
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool deoksiribonukleinskakiselina(string dna)
+{
+	int GCjiji=0;
+	int i = 0;
+	if (dna.length() >= 6 && dna.length() <= 30)
+	{
+		while (1)
+		{
+			if (dna[i] == 'A' || dna[i] == 'C' || dna[i] == 'G' || dna[i] == 'T')
+			{
+				if (dna[i] == 'C' || dna[i] == 'G')
+				{
+					GCjiji++;
+				}
+			}
+			else
+			{
+				return false;
+			}
+			if (dna[i] == '\0')
+			{
+				break;
+			}
+			i++;
+		}
+	}
+	if (dna.length() / GCjiji >= 2)
+	{
+		return true;
+	}
+	return false;
+}
+
+int main()
+{
+	string dna;
+	cin >> dna;
+	cout << deoksiribonukleinskakiselina(dna);
+	return 0;
+}

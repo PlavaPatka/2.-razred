@@ -102,6 +102,8 @@ DNA UZORAK
 
 
 
+
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -132,7 +134,7 @@ bool deoksiribonukleinskakiselina(string dna)
 			i++;
 		}
 	}
-	if (dna.length() / GCjiji >= 2)
+	if (GCjiji * 2 >= dna.length())
 	{
 		return true;
 	}

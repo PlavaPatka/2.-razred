@@ -89,3 +89,41 @@ int main()
 
 
 AUTONOMNI ROVER
+
+
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int senzori(int polje[1000][4], int n, int D)
+{
+	int i = 0;
+	for (int j = 0;j < n;j++)
+	{
+		if (abs(polje[j][i] - polje[j][i + 1]) < D && abs(polje[j][i + 1] - polje[j][i + 2]) < D && abs(polje[j][i + 2] - polje[j][i + 3]) < D)
+		{
+			return j;
+		}
+	}
+	return -1;
+}
+
+
+int main()
+{
+	int n, D;
+	cin >> n >> D;
+	int polje[1000][4];
+	for (int i = 0;i < n;i++)
+	{
+		for (int j = 0;j < 4;j++)
+		{
+			cin >> polje[i][j];
+		}
+	}
+	cout << senzori(polje, n, D);
+	return 0;
+}

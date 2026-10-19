@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int zbroj(int a, int b, int c)
+{
+	return a + b + c;
+}
+
+bool provjera(int n, int a, int b, int c)
+{
+	if (n >= 200 && a >= 40 && b >= 40 && c >= 40)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+void ispis(bool p)
+{
+	if (p == true)
+	{
+		cout << "PROLAZI";
+	}
+	else
+	{
+		cout << "NE PROLAZI";
+	}
+}
+
+int main()
+{
+	int a, b, c;
+	cin >> a >> b >> c;
+	ispis(provjera(zbroj(a, b, c), a, b, c));
+	return 0;
+}

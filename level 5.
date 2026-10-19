@@ -55,3 +55,37 @@ SIGNAL U TUNELU
 
 
 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int signal(int polje[], int n, int D)
+{
+	for (int i = 0;i < n;i++)
+		if (abs(polje[i]-polje[i+1])>D)
+		{
+			return i+1;
+		}
+	return -1;
+}
+
+
+int main()
+{
+	int n, D;
+	cin >> n >> D;
+	int polje[1000];
+	for (int i = 0;i < n;i++)
+	{
+		cin >> polje[i];
+	}
+	cout << signal(polje, n ,D);
+	return 0;
+}
+
+
+
+
+
+AUTONOMNI ROVER

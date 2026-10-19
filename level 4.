@@ -1,0 +1,128 @@
+
+
+
+
+
+PAKETI U SORTNICI
+
+
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int Paketi(int polje[], int n, int L, int D)
+{
+	int brojP=0;
+	for(int i=0;i<n;i++)
+		if (polje[i]>=D && polje[i]<=L)
+		{
+			brojP++;
+		}
+	return brojP;
+}
+
+
+int main()
+{
+	int n, D, L;
+	cin >> n >> D >> L;
+	int polje[1000];
+	for (int i = 0;i < n;i++)
+	{
+		cin >> polje[i];
+	}
+	cout << Paketi(polje, n, L, D);
+	return 0;
+}
+
+
+
+
+
+SENZORI NAKON OLUJE
+
+
+
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void Mjera(int polje[], int n)
+{
+	for(int i=0;i<n;i++)
+		if (polje[i]<0)
+		{
+			polje[i] = 0;
+		}
+}
+
+
+int main()
+{
+	int n;
+	cin >> n;
+	int polje[1000];
+	for (int i = 0;i < n;i++)
+	{
+		cin >> polje[i];
+	}
+	Mjera(polje, n);
+	for (int i = 0;i < n;i++)
+	{
+		cout << polje[i] << ' ';
+	}
+	return 0;
+}
+
+
+
+
+
+
+PAMETNI STAKLENIK
+
+
+
+
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int senzori(int polje[4][6], int p, int r)
+{
+	int n=0;
+	for (int j = 0;j < 6;j++)
+	{
+		if (polje[r][j] > p)
+		{
+			n++;
+		}
+	}
+	return n;
+}
+
+
+int main()
+{
+	int p, r;
+	cin >> p >> r;
+	int polje[4][6];
+	for (int i = 0;i < 4;i++)
+	{
+		for (int j = 0;j < 6;j++)
+		{
+			cin >> polje[i][j];
+		}
+	}
+	cout << senzori(polje, p, r);
+	return 0;
+}

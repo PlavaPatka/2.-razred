@@ -37,3 +37,81 @@ int main()
 	ispis(provjera(zbroj(a, b, c), a, b, c));
 	return 0;
 }
+
+
+
+
+
+
+
+
+PROMETNI NEKAJ
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+bool uvjet(int k, int l);
+{
+	if (k <= 20 && l <= 30)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+bool popust(int c);
+{
+	if (c>=80)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+int cijena(bool u, bool p, int l)
+{
+	if (u == false)
+	{
+		return 0;
+	}
+	else
+	{
+		if (p == true)
+		{
+			return l * 0.4;
+		}
+		if (p == true)
+		{
+			return l * 0.4 + 3;
+		}
+	}
+}
+
+int main()
+{
+	int a, b, c;
+	cin >> a >> b >> c;
+	int u = uvjet(a, b);
+	int p = popust(c);
+	if (cijena(u, p, b) == 0)
+	{
+		cout << "Dostava nije moguća";
+	}
+	else
+	{
+		cout << cijena(u, p, b);
+	}
+	return 0;
+}

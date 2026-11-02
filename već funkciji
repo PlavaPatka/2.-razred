@@ -1,3 +1,11 @@
+
+
+
+NEKAJ
+
+
+
+
 #include <iostream>
 using namespace std;
 
@@ -113,5 +121,48 @@ int main()
 	{
 		cout << cijena(u, p, b);
 	}
+	return 0;
+}
+
+
+
+
+
+
+
+ŠKOLSKI FESTIVAL
+
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+float cijena = 0;
+
+void ucenikpopust(int u, int p)
+{
+	cijena = u * 9 + p * 12;
+}
+
+void grupapopust(int u, int p)
+{
+	if ((u + p) >= 5)
+	{
+		cijena -= cijena * 0.1;
+	}
+}
+
+int main()
+{
+	int u, p;
+	cin >> u >> p;
+	ucenikpopust(u, p);
+	grupapopust(u, p);
+	cout << cijena;
 	return 0;
 }

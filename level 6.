@@ -49,3 +49,92 @@ int main()
 	sat(vure, minote, sekunde);
 	return 0;
 }
+
+
+
+
+
+
+
+TAJNI TREZOR
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+bool uvjet1(int n)
+{
+	int tisucica = n / 1000;
+	int stotica = (n / 100) % 10;
+	int desetica = (n / 10) % 10;
+	int jedinica = n % 10;
+	if (tisucica + jedinica == desetica + stotica)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+bool uvjet2(int n)
+{
+	int tisucica = n / 1000;
+	int stotica = (n / 100) % 10;
+	int desetica = (n / 10) % 10;
+	int jedinica = n % 10;
+	if (tisucica != stotica && tisucica != desetica && tisucica != jedinica && stotica != desetica && stotica != jedinica && desetica != jedinica)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+bool uvjet3(int n)
+{
+	int tisucica = n / 1000;
+	int stotica = (n / 100) % 10;
+	int desetica = (n / 10) % 10;
+	int jedinica = n % 10;
+	int temp = jedinica;
+	jedinica = tisucica;
+	tisucica = temp;
+	int brojek = jedinica + desetica * 10 + stotica * 100 + tisucica * 1000;
+	if (brojek % 7 == 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+void sigurnost(bool u1, bool u2, bool u3)
+{
+	if (u1 == true && u2 == true && u3 == true)
+	{
+		cout << "SIGURNO";
+	}
+	else
+	{
+		cout << "NESIGURNO";
+	}
+}
+
+int main()
+{
+	int kod;
+	cin >> kod;
+	sigurnost(uvjet1(kod), uvjet2(kod), uvjet3(kod));
+	return 0;
+}

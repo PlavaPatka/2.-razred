@@ -1,0 +1,51 @@
+
+
+
+
+DIGITALNI SAT
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+void naslov()
+{
+	cout << "SLJEDECA SEKUNDA" << endl;
+}
+
+void sat(int v, int m, int s)
+{
+    if (s == 59)
+    {
+        s = 0;
+        m++;
+    }
+    else
+    {
+        s++;
+    }
+
+    if (m == 60)
+    {
+        m = 0;
+        v++;
+    }
+
+    if (v == 24)
+    {
+        v = 0;
+    }
+    cout << v << ":" << m << ":" << s;
+}
+
+int main()
+{
+	int vure, minote, sekunde;
+	cin >> vure >> minote >> sekunde;
+	naslov();
+	sat(vure, minote, sekunde);
+	return 0;
+}

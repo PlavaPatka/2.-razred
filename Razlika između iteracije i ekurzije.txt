@@ -1,0 +1,7 @@
+
+Razlika između iteracije i rekurzije
+
+
+Kod se može najčešće riješiti a oba dva načina, ali za većinu slučaja je jedno bolje. Rekurzija se više koristi za traženje, sortiranje i grafove, dok se iteracija više koristi za kompleksnije verzije toga i dok je memorija bitna.
+Iteracija se implementira pomoću petlje, varijabla se povećava do kraja petlje i izvodi se kod toliko puta. Rekurzija se implementira pomoću poziva funkcije, a definira se s obzirom na broj manjih problema, veličine ulaznih podatka i osnovnih slučajeva. Svaku rekurzivnu implementaciju moguće je pretvoriti u iterativnu implementaciju pomoću stoga, a u nekim se može i obrnuto. Iterativna petlja se izvršava dok se problem ne riješi, dok se rekurzivni izvršava dok se ne dođe do osnovnog problema. Rekurzija je u praksi sporija od iteracije jer svaki poziv donosi dodatne troškove memorije i vremena na stogu. Iterativno rješenje je brže jer ne poziva funkcije, ali je često u praksi teži za napisati i razumjeti. Kod iteracije može doći do beskonačne petlje zbog pogreške. To može doći do prekomjernog korištenja sistemskih resursa. Kod rekurzije može doći do beskonačne rekurzije zbog nedostatka osnovnog slučaja ili pogrešnog definiranja. To može doći do prekoračenja kapaciteta stoga, overflow.
+

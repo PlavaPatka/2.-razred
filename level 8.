@@ -1,0 +1,109 @@
+
+DIGITALNO ZRCALO
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+void obrnuto(int n)
+{
+	cout << n % 10;
+	if (n < 10)
+	{
+		return;
+	}
+	obrnuto(n / 10);
+}
+
+int main()
+{
+	int n;
+	cin >> n;
+	obrnuto(n);
+}
+
+
+
+
+
+
+POTRAGA KROZ TUNEL
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int BrojPozitivnih(int a[], int n,int i)
+{
+	if (i == n)
+	{
+		return 0;
+	}
+	if (a[i] > 0)
+	{
+		return 1 + (BrojPozitivnih(a, n, i+1));
+	}
+	else
+	{
+		return (BrojPozitivnih(a, n, i+1));
+	}
+}
+
+int main()
+{
+	int i = 0;
+	int polje[1000];
+	int velicina;
+	cin >> velicina;
+	for (int i = 0;i < velicina;i++)
+	{
+		cin >> polje[i];
+	}
+	cout << BrojPozitivnih(polje, velicina, i);
+}
+
+
+
+
+
+
+
+
+PUT DO CILJA 
+
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+long long nacini(int n)
+{
+	if (n == 0)
+	{
+		return 1;
+	}
+	if (n < 0)
+	{
+		return 0;
+	}
+	return nacini(n - 2) + nacini(n - 1);
+}
+
+int main()
+{
+	int n;
+	cin >> n;
+	cout << nacini(n);
+}

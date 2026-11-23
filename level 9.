@@ -1,0 +1,219 @@
+
+
+
+
+ANALIZATOR REZULTATA NATJECANJA
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+void najbolji(int a[], int n)
+{
+	int veliki = 0;
+	int velikip = 0;
+	for (int i = 0;i < n;i++)
+	{
+		if (a[i] > veliki)
+		{
+			veliki = a[i];
+			velikip = i;
+		}
+	}
+	cout << "NAJBOLJI" << veliki << endl;
+	cout << "POZICIJA" << velikip + 1 << endl;
+}
+
+void prolaz(int a[], int n, int p)
+{
+	int broj = 0;
+	for (int i = 0;i < n;i++)
+	{
+		if (a[i] >= p)
+		{
+			broj++;
+		}
+	}
+	cout << "PROLAZ" << broj;
+}
+
+int main()
+{
+	int polje[1000];
+	int n, p;
+	cin >> n >> p;
+	for (int i = 0;i < n;i++)
+	{
+		cin >> polje[i];
+	}
+	najbolji(polje, n);
+	prolaz(polje, n, p);
+}
+
+
+
+
+Funkcija 1: NAJBOLJI (prima polje a i broj elementa n, ispisuje najveći i njegovu poziciju)
+Funkcija 2: PROLAZ (prima polje a, broj elementa n i prag p, ispisuje kolko ima ih ima najmanje p bodova)
+
+Ako je prag 70 i 70 je navedeno bodova, kod >= PROLAZI, kod > NE PROLAZI
+
+Više "najboljih" rezultata:
+
+3
+40
+50
+50
+50
+NAJBOLJI50
+POZICIJA1
+PROLAZ3
+
+Nitko ne prolazi prag:
+
+3
+40
+1
+2
+3
+NAJBOLJI3
+POZICIJA3
+PROLAZ0
+
+
+
+ONO DODATNO
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+void najbolji(int a[], int n)
+{
+	int kulkovelikih=0;
+	int veliki = 0;
+	int velikip = 0;
+	for (int i = 0;i < n;i++)
+	{
+		if (a[i] > veliki)
+		{
+			veliki = a[i];
+			velikip = i;
+			kulkovelikih = 1;
+		}
+		else if (a[i] = veliki)
+		{
+			kulkovelikih++;
+		}
+	}
+	cout << "NAJBOLJI: " << veliki << endl;
+	cout << "POZICIJA: " << velikip + 1 << endl;
+	cout << "KULKO ISTIH VELIKI: " << kulkovelikih << endl;
+}
+
+void prolaz(int a[], int n, int p)
+{
+	int broj = 0;
+	for (int i = 0;i < n;i++)
+	{
+		if (a[i] >= p)
+		{
+			broj++;
+		}
+	}
+	cout << "PROLAZ: " << broj;
+}
+
+int main()
+{
+	int polje[1000];
+	int n, p;
+	cin >> n >> p;
+	for (int i = 0;i < n;i++)
+	{
+		cin >> polje[i];
+	}
+	najbolji(polje, n);
+	prolaz(polje, n, p);
+}
+
+
+
+
+
+REŠENO Z VEKTORAJ
+
+
+
+
+
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void najbolji(vector<int> a, int n)
+{
+    int kulkovelikih = 0;
+    int veliki = 0;
+    int velikip = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] > veliki)
+        {
+            veliki = a[i];
+            velikip = i;
+            kulkovelikih = 1;
+        }
+        else if (a[i] == veliki)
+        {
+            kulkovelikih++;
+        }
+    }
+
+    cout << "NAJBOLJI: " << veliki << endl;
+    cout << "POZICIJA: " << velikip + 1 << endl;
+    cout << "KULKO ISTIH VELIKI: " << kulkovelikih << endl;
+}
+
+void prolaz(vector<int> a, int n, int p)
+{
+    int broj = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] >= p)
+        {
+            broj++;
+        }
+    }
+
+    cout << "PROLAZ: " << broj;
+}
+
+int main()
+{
+    vector<int> polje;
+    int n, p;
+
+    cin >> n >> p;
+
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        polje.push_back(x);
+    }
+
+    najbolji(polje, n);
+    prolaz(polje, n, p);
+}

@@ -76,13 +76,13 @@ int main()
 Bazni slučaj je (n == 0), n se oduzima, odbrojava kroz elemente i dok je 0 staje i vrati 0 + sve ono z steka
 
 Za vektor {42, 58, 35} i prag p = 50: koliko elemenata zadovoljava uvjet? 1
-Napiši što vraća rekurzivni poziv kada je indeks jednak veličini vektora: jednu vrijednost
+Napiši što vraća rekurzivni poziv kada je indeks jednak veličini vektora: 0
 Koji se argument mijenja pri svakom sljedećem pozivu? n
 
 Testovi bi trebali doći isti na iteratovnom i rekurzivnom.
 
 Iterativno:                            
-Koliko se elemenata obrađuje?  1, vektor  
+Koliko se elemenata obrađuje?  2, vektor i i
 Vremenska složenost O(…)?  manje od rekurzije  
 Dodatna memorija O(…)?    p, n, vektor
 Što se događa s vrlo velikim n?  obradi se do kraja svakako
@@ -95,9 +95,9 @@ Dodatna memorija O(…)?  pozivi na stacku, p, n, vektor
 
 Ako je n velik bira se iterativno jer se program nebre vruhnuti i ne troši tolko memorije zbrog svih tih poziva
 
-ako je n 1000000 riješenje bi bilo ako več ne mijenjamo program, ne stavljamo rekurziju jer je to 1000000 poziva onda, pa zato stavljamo petlju koja ne sruši program.
+ako je n 1000000 riješenje bi bilo ako več ne mijenjamo program, ne stavljamo rekurziju jer je to 1000000 poziva onda, pa zato stavljamo petlju koja ne sruši program ili kupiti već rama i promjeniti limit
 
-Iterativno se sve u jednom prolasku može provjeriti, samo svaki a[i] provjerimo s if za svoj slučaj.
+Iterativno se sve u jednom prolasku može provjeriti, samo svaki a[i] provjerimo s if za svoj slučaj
 
 Koristil sam ai jer sam ne razmil zakaj mi prek vektora ide rekurzija
 

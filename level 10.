@@ -1,0 +1,108 @@
+
+
+
+
+LEVEL 9. Z REKURZIJOM
+
+
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void najbolji(const vector<int> a, int n)
+{
+    int kulkovelikih = 0;
+    int veliki = 0;
+    int velikip = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] > veliki)
+        {
+            veliki = a[i];
+            velikip = i;
+            kulkovelikih = 1;
+        }
+        else if (a[i] == veliki)
+        {
+            kulkovelikih++;
+        }
+    }
+
+    cout << "NAJBOLJI: " << veliki << endl;
+    cout << "POZICIJA: " << velikip + 1 << endl;
+    cout << "KULKO ISTIH VELIKI: " << kulkovelikih << endl;
+}
+
+int prolaz(const vector<int> a, int n, int p)
+{
+    if (n == 0)
+    {
+        return 0;
+    }
+    if (a[n-1] >= p)
+    {
+        return 1 + prolaz(a, n-1, p);
+    }
+    else
+    {
+        return prolaz(a, n - 1, p);
+    }
+}
+
+int main()
+{
+    vector<int> polje;
+    int n, p;
+
+    cin >> n >> p;
+
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        polje.push_back(x);
+    }
+
+    najbolji(polje, n);
+    cout << "PROLAZ: " << prolaz(polje, n, p);
+}
+
+
+
+
+Bazni slučaj je (n == 0), n se oduzima, odbrojava kroz elemente i dok je 0 staje i vrati 0 + sve ono z steka
+
+Za vektor {42, 58, 35} i prag p = 50: koliko elemenata zadovoljava uvjet? 1
+Napiši što vraća rekurzivni poziv kada je indeks jednak veličini vektora: jednu vrijednost
+Koji se argument mijenja pri svakom sljedećem pozivu? n
+
+Testovi bi trebali doći isti na iteratovnom i rekurzivnom.
+
+Iterativno:                            
+Koliko se elemenata obrađuje?  1, vektor  
+Vremenska složenost O(…)?  manje od rekurzije  
+Dodatna memorija O(…)?    p, n, vektor
+Što se događa s vrlo velikim n?  obradi se do kraja svakako
+
+Rekurzvno:
+Koliko se elemenata obrađuje? 2, vektor i n
+Vremenska složenost O(…)?  veća od iterativnoog zbog poziva
+Dodatna memorija O(…)?  pozivi na stacku, p, n, vektor
+Što se događa s vrlo velikim n?  stack overflow, vruhne se
+
+Ako je n velik bira se iterativno jer se program nebre vruhnuti i ne troši tolko memorije zbrog svih tih poziva
+
+ako je n 1000000 riješenje bi bilo ako več ne mijenjamo program, ne stavljamo rekurziju jer je to 1000000 poziva onda, pa zato stavljamo petlju koja ne sruši program.
+
+Iterativno se sve u jednom prolasku može provjeriti, samo svaki a[i] provjerimo s if za svoj slučaj.
+
+Koristil sam ai jer sam ne razmil zakaj mi prek vektora ide rekurzija
+
+Sada mogu samostalno objasniti bazni slučaj: DA
+Mogu obrazložiti razliku u dodatnoj memoriji: DA
+
+Što želim dodatno uvježbati prije završne provjere? pisati rekurziju v kodu, teoriju razmem
+
